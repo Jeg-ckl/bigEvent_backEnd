@@ -33,7 +33,7 @@ function getUserInfo() {
                 console.log(res);
                 return layer.msg('获取用户信息失败！')
             }
-            console.log(res);
+            // console.log(res);
             // 调用渲染用户头像的函数
             randerAvatar(res.data);
         },
@@ -53,7 +53,7 @@ function getUserInfo() {
 // 渲染用户头像
 function randerAvatar(user) {
     // 获取用户名称
-    var name = user.nikename || user.username;
+    var name = user.nickname || user.username;
     $("#welcome").html(name);
     if (user.user_pic !== null) {
         $(".layui-nav-img").attr('src', user.user_pic).show();
